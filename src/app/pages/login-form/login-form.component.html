@@ -1,1 +1,16 @@
-<p>login-form works!</p>
+<section class = "container my-5">
+    <form #loginForm="ngForm" (ngSubmit) = "getDataForm(loginForm)">
+        <div class = "mb-2">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" id="email" class="form-control" placeholder="introduce tu email" name="email" ngModel>
+        </div>
+
+        <div class = "mb-2">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="text" id="email" class="form-control" placeholder="introduce tu contraseña" name="password" ngModel>
+        </div>
+
+        <input type="submit" value="Logarse" class="btn btn-danger">
+
+    </form>
+</section>
