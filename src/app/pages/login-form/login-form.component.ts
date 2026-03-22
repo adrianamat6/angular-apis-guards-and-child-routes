@@ -22,6 +22,14 @@ export class LoginFormComponent {
       let response:any = await this.userService.login(loginUser); 
       if (response.success){
         toast.success(response.success)
+
+        // localStorage.getItem
+        // localStorage.setItem
+        // localStorage.removeItem
+        // localStorage.clear
+
+        localStorage.setItem('token', response.token)
+
         this.router.navigate(['/dashboard'])
       }
     }catch(data:any){
