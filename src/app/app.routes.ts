@@ -13,7 +13,7 @@ export const routes: Routes = [
     {path: "login", component: LoginFormComponent}, 
     { path: "dashboard", component: DashboardComponent, canActivate: [loginGuard], 
         children: [ 
-                {path: "", pathMatch: "full", redirectTo: 'empleados'}, 
+                {path: "", pathMatch: "full", redirectTo: 'empleados'}, // cuando alguien entre en dashboard (la raiz), le digo que redirija a la ruta empleados
                 { path: "empleados", component: EmployeeListComponent }, 
                 { path: "nuevo-empleado", component: EmployeeFormComponent } ,
                 { path: "actualizar-empleado/:id", component: EmployeeFormComponent } 

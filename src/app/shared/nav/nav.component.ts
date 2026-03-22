@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-nav',
@@ -8,5 +9,14 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nav.component.css',
 })
 export class NavComponent {
+
+  router = inject(Router); 
+
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/home']); 
+
+    toast.success('Hasta luego Maricarmen')
+  }
 
 }
