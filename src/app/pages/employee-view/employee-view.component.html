@@ -1,1 +1,59 @@
-<p>employee-view works!</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Detalles del Empleado</h4>
+                </div>
+                <div class="card-body">
+                    <!-- Fila 1: Nombre completo e ID -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label"><strong>Nombre completo:</strong></label>
+                            <p>{{ miEmployee()?.nombre }} {{ miEmployee()?.apellidos }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><strong>ID:</strong></label>
+                            <p>{{ miEmployee()?._id }}</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Fila 2: Email y Teléfono -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label"><strong>Email:</strong></label>
+                            <p>{{ miEmployee()?.email }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><strong>Teléfono:</strong></label>
+                            <p>{{ miEmployee()?.telefono }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Fila 3: Departamento y Salario -->
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label"><strong>Departamento:</strong></label>
+                            <p>{{ miEmployee()?.departamento }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label"><strong>Salario:</strong></label>
+                            <!-- Añado el símbolo € como detalle visual -->
+                            <p>{{ miEmployee()?.salario }} €</p> 
+                        </div>
+                    </div>
+
+                    <!-- Botones de acción -->
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <!-- Volver te lleva a la lista de empleados -->
+                            <button class="btn btn-secondary me-2" [routerLink]="['/dashboard', 'empleados']">Volver</button>
+                            <!-- Editar te lleva a la ruta de actualizar pasándole el ID -->
+                            <button class="btn btn-primary" [routerLink]="['/dashboard', 'actualizar-empleado', miEmployee()?._id]">Editar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

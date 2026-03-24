@@ -34,7 +34,9 @@ export class EmployeesServices {
     return lastValueFrom(this.httpClient.get<IEmployee[]>(this.baseUrl))
   }
   
-
+  getById(id:string | undefined): Promise<IEmployee>{
+      return lastValueFrom(this.httpClient.get<IEmployee>(`${this.baseUrl}/${id}`))
+  }
 
 
 
