@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { IEmployee } from '../../interfaces/iemployee.interface';
 
 @Component({
   selector: 'app-employee-card',
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class EmployeeCardComponent {
 
+  employee = input<IEmployee>(); 
+
+  
 }

@@ -2,9 +2,10 @@ import { Component, inject, signal } from '@angular/core';
 import { IEmployee } from '../../interfaces/iemployee.interface';
 import { EmployeesServices } from '../../services/employees.services';
 import { toast } from 'ngx-sonner';
+import { EmployeeCardComponent } from '../../components/employee-card/employee-card.component';
 @Component({
   selector: 'app-employee-list',
-  imports: [],
+  imports: [EmployeeCardComponent],
   templateUrl: './employee-list.component.html',
   styleUrl: './employee-list.component.css',
 })
