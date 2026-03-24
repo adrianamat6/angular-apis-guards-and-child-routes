@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-employee-view',
@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class EmployeeViewComponent {
 
+  id = input<string>(); 
+  
 }

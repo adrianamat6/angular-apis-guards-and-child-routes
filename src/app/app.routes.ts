@@ -6,6 +6,7 @@ import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { loginGuard } from './guards/login-guard';
 import { EmployeeListComponent } from './pages/employee-list/employee-list.component';
 import { EmployeeFormComponent } from './pages/employee-form/employee-form.component';
+import { EmployeeViewComponent } from './pages/employee-view/employee-view.component';
 
 export const routes: Routes = [
     {path: "", pathMatch: "full", redirectTo: 'home'}, 
@@ -16,7 +17,8 @@ export const routes: Routes = [
                 {path: "", pathMatch: "full", redirectTo: 'empleados'}, // cuando alguien entre en dashboard (la raiz), le digo que redirija a la ruta empleados
                 { path: "empleados", component: EmployeeListComponent }, 
                 { path: "nuevo-empleado", component: EmployeeFormComponent } ,
-                { path: "actualizar-empleado/:id", component: EmployeeFormComponent } 
+                { path: "actualizar-empleado/:id", component: EmployeeFormComponent } , 
+                { path: "empleado/:id", component: EmployeeViewComponent}
                   ] 
         }, 
     {path: "**", component: Error404Component}, 
